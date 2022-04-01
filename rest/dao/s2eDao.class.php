@@ -21,7 +21,20 @@
 
     public function add($name, $surename){
       $stmt = $this->conn->prepare("INSERT INTO users(name,surename,email) VALUES ('$name', '$surename','email@kosda.com')");
-      $result = $stmt->execute();
+      $stmt->execute();
+    }
+
+    public function delete($id){
+      $stmt = $this->conn->prepare("DELETE FROM users WHERE id=$id");
+      $stmt->execute();
+    }
+
+    public function update($id, $name, $surename, $email){
+      $stmt = $this->conn->prepare("UPDATE users SET name=$name, surename=$surename, email=$email WHERE id=$id");
+      $stmt->execute();
+
+
+
     }
  }
 

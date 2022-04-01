@@ -4,12 +4,10 @@ ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 require_once("rest/dao/s2eDao.class.php");
 
-$name = $_REQUEST['name'];
-$surename = $_REQUEST['surename'];
+$id = $_REQUEST['id'];
 
 $dao = new s2eDao();
-$results = $dao->add($name, $surename);
-print_r($results);
+$dao->delete($id);
 
-echo("inserted");
+echo("deleted $id");
  ?>
