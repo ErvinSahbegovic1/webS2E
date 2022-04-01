@@ -11,8 +11,8 @@ $email = $_REQUEST['email'];
 
 
 $dao = new s2eDao();
-$results = $dao->update($id,$name, $surename, $email);
-print_r($results);
+$dao->update($id,$name, $surename, $email);
 
-echo("updated");
+
+echo("updated $id");
  ?>
