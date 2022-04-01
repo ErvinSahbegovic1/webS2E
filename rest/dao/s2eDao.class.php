@@ -20,7 +20,8 @@
     }
 
     public function add($name, $surename){
-      $stmt = $this->conn->prepare("INSERT INTO users(name,surename,email) VALUES ('name', 'surename','email@kosda.com')");
+      $stmt = $this->conn->prepare("INSERT INTO users(name,surename,email) VALUES ('$name', '$surename','email@kosda.com')");
+      $result = $stmt->execute();
     }
  }
 
