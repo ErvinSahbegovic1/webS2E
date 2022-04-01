@@ -7,6 +7,6 @@ require_once("rest/dao/s2eDao.class.php");
 $dao = new s2eDao();
 $results = $dao->getAll();
 print_r($results);
-echo("workin");
+echo("defaultFunCalled");
 
  ?>

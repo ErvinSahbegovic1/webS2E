@@ -8,8 +8,6 @@ $name = $_REQUEST['name'];
 $surename = $_REQUEST['surename'];
 
 $dao = new s2eDao();
-$results = $dao->add($name, $surename);
-print_r($results);
-
+$dao->add($name, $surename);
 echo("inserted");
  ?>
