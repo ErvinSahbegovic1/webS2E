@@ -12,12 +12,12 @@ switch ($op) {
     $dao->delete($id);
     echo("deleted $id");
     break;
-  case 'insert':
+  case 'add':
     $name = $_REQUEST['name'];
     $surename = $_REQUEST['surename'];
     $dao = new s2eDao();
-    $dao->add($name, $surename);
-    echo("inserted");
+    $dao->add($name, $surename, $email);
+    echo("inserted $name");
     break;
     case 'update':
       $id = $_REQUEST['id']

@@ -1,7 +1,7 @@
 <?php
 
  class s2eDao{
-   private $conn;
+   public $conn;
 
    // constructor //
    public function __construct(){
@@ -25,11 +25,11 @@
     return $stmt->fetchALL(PDO::FETCH_ASSOC);
     }
 
-    public function add($name, $surename){
-      $stmt = $this->conn->prepare("INSERT INTO users(name,surename,email) VALUES (:name, :surename,'email@kosda.com')");
-      $stmt->bindParam('name',$name);
-      $stmt->bindParam('surename',$surename);
-      $stmt->execute();
+    public function add($params){
+      $stmt = $this->conn->prepare("INSERT INTO users(name,surename,email) VALUES (:name, :surename, :email)");
+      $stmt->execute($params);
+      return $params;
+
     }
 
     public function delete($id){
