@@ -38,7 +38,6 @@
       $stmt->bindParam('name',$name);
       $stmt->bindParam('surename',$surename);
       $stmt->bindParam('email',$email);
-
       $stmt->execute();
   }
  }

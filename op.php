@@ -26,15 +26,11 @@ switch ($op) {
       $email = $_REQUEST['email'];
       $dao->update($id,$name, $surename, $email);
       echo("updated $id");
-
       break;
   default:
     $results = $dao->getAll();
     print_r($results);
-    echo("defaultFunCalled");
-
     break;
 }
-
 
  ?>
