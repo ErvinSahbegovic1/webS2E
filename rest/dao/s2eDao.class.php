@@ -38,13 +38,9 @@
       $stmt->execute();
     }
 
-    public function update($id, $name, $surename, $email){
+    public function update($params){
       $stmt = $this->conn->prepare("UPDATE users SET name=:name, surename=:surename, email=:email WHERE id=:id");
-      $stmt->bindParam('id',$id);
-      $stmt->bindParam('name',$name);
-      $stmt->bindParam('surename',$surename);
-      $stmt->bindParam('email',$email);
-      $stmt->execute();
+      $stmt->execute($params);
   }
  }
 

@@ -27,11 +27,17 @@ Flight::route('POST /users', function(){
     Flight::json($user);
 });
 
-//  Flight::route('DELETE /users/@id', function($id){
-//      Flight::daoFlight()->delete($id);
-//      Flight::json("message" => "deleted ID: $id");
-//  });
+  Flight::route('DELETE /users/@id', function($id){
+      Flight::daoFlight()->delete($id);
+      Flight::json(["message" => "deleted ID: $id"]);
+  });
 
+  Flight::route('PUT /users/@id', function($id){
+      $data = Flight::request()->data->getData();
+      $data['id']=$id;
+      Flight::daoFlight()->update($data);
+      Flight::json($data);
+  });
 
 
 Flight::start();
